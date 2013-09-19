@@ -1,7 +1,6 @@
 <?php
 
 $devices = explode("\n", shell_exec("adb devices"));
-$pattern = "/([a-zA-Z0-9]+)\s+device/";
 $zip = new ZipArchive;
 if ($zip->open($argv[1]) === TRUE) {
   $zip->extractTo('.', 'AndroidManifest.xml');
@@ -25,6 +24,7 @@ foreach ($AndroidManifest->application->activity as $activity) {
     }
 }
 
+$pattern = "/([a-zA-Z0-9]+)\s+device/";
 for ($i = 1; $i < count($devices); $i++) {
   if (preg_match("/device$/", $devices[$i])) {
     // 裝置編號
