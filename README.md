@@ -22,7 +22,7 @@ InstallApkToDevices
 程式運作原理
 ============
 1. `adb devices` 取所有裝置編號
-2. `AXMLPrinter2.jar` 取得 apk 的 `Package Name` and `Activity Name`
+2. 利用 `AXMLPrinter2.jar` 取得 apk 的 `Package Name` and `Activity Name`
 3. `adb -s [裝置編號] install [apk路徑]` 安裝 apk
 4. `adb -s [裝置編號] shell am start -a android.intent.action.MAIN -n [Package Name]/[Acitivity Name]`
 
