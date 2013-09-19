@@ -6,6 +6,9 @@ $zip = new ZipArchive;
 if ($zip->open($argv[1]) === TRUE) {
   $zip->extractTo('.', 'AndroidManifest.xml');
   $zip->close();
+} else {
+  echo "apk 不存在\n";
+  exit;
 }
 
 $path = preg_replace("/([\w]*)InstallApkToDevices.php$/", '$1',$argv[0]);
