@@ -8,7 +8,7 @@ InstallApkToDevices
 =========
 1. 安裝 jdk 並且把 `javac` 設為環境變數
 2. 安裝 Android SDK，並把 `adb` 設為環境變數
-3. 安裝 php 版本 4 以上，並設為環境變數，可用 `php -v` 查看版本
+3. 安裝 php 版本 5.3 以上，並設為環境變數，可用 `php -v` 查看版本
 4. 將 `AXMLPrinter2.jar` 和 `Android2ApkDevices.php` 放置同一個目錄
 
 使用方式
