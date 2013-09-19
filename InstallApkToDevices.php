@@ -8,8 +8,8 @@ if ($zip->open($argv[1]) === TRUE) {
   $zip->close();
 }
 
-$path = preg_replace("/([\w]*)Android2ApkDevices.php$/", '$1',$argv[0]);
-$AndroidManifest = shell_exec("java -jar {$path}AXMLPrinter2.jar AndroidManifest.xml");
+$path = preg_replace("/([\w]*)InstallApkToDevices.php$/", '$1',$argv[0]);
+$AndroidManifest = shell_exec("java -jar {$path}/AXMLPrinter2.jar AndroidManifest.xml");
 $AndroidManifest = simplexml_load_string($AndroidManifest);
 $package = $AndroidManifest->attributes()->package;
 
