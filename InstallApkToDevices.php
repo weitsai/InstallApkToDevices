@@ -16,8 +16,7 @@ $package = $AndroidManifest->attributes()->package;
 
 foreach ($AndroidManifest->application->activity as $activity) {
   $category = $activity->{'intent-filter'}->category;
-  if ($category != null &&
-    $category->attributes('android', true)->name == 'android.intent.category.LAUNCHER') {
+  if ($category && $category->attributes('android', true)->name == 'android.intent.category.LAUNCHER') {
       $className = $activity->attributes('android', true)->name;
       break;
     }
