@@ -1,7 +1,11 @@
 InstallApkToDevices
 ===================
 
-本專案目的是把 apk 安裝多個已連接裝置上
+InstallApkToDevices 是解決一次要安裝某個 apk 到所有裝置上的問題，
+因為 Android 碎片化問題嚴重，
+當 layout 設計好後必須在許多裝置上看結果，
+但是透過 eclipse 或是 android studio 都只能執行到某一支手機上，
+因此本工具是要解決想要一次安裝到多個手機的使用者需求。
 
 
 環境設定
