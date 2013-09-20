@@ -1,17 +1,17 @@
 <?php
 
 $devices = explode("\n", shell_exec("adb devices"));
+$path = preg_replace("/([\w]*)InstallApkToDevices.php$/", '$1',$argv[0]);
 $zip = new ZipArchive;
 if ($zip->open($argv[1]) === TRUE) {
-  $zip->extractTo('.', 'AndroidManifest.xml');
+  $zip->extractTo("$path", 'AndroidManifest.xml');
   $zip->close();
 } else {
   echo "apk 不存在\n";
   exit;
 }
 
-$path = preg_replace("/([\w]*)InstallApkToDevices.php$/", '$1',$argv[0]);
-$AndroidManifest = shell_exec("java -jar {$path}/AXMLPrinter2.jar AndroidManifest.xml");
+$AndroidManifest = shell_exec("java -jar {$path}/AXMLPrinter2.jar {$path}/AndroidManifest.xml");
 $AndroidManifest = simplexml_load_string($AndroidManifest);
 $package = $AndroidManifest->attributes()->package;
 
@@ -38,4 +38,4 @@ for ($i = 1; $i < count($devices); $i++) {
   }
 }
 
-shell_exec('rm AndroidManifest.xml');
+shell_exec("rm {$path}/AndroidManifest.xml");
