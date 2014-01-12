@@ -1,4 +1,10 @@
 <?php
+$APK_PATH = isset($argv[1]) ? $argv[1]:false;
+
+if (!$APK_PATH) {
+  echo "error: 請輸入 apk 路徑!";
+  exit;
+}
 
 $devices = explode("\n", shell_exec("adb devices"));
 $path = preg_replace("/([\w]*)InstallApkToDevices.php$/", '$1',$argv[0]);
