@@ -1,5 +1,5 @@
 <?php
-define('APK_PATH', isset($argv[1]) ? $argv[1]:false);
+define('APK_PATH', isset($argv[1]) ? $argv[1] : false);
 
 if (!APK_PATH) {
   echo "error: 請輸入 apk 路徑!";
