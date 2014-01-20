@@ -1,7 +1,7 @@
 <?php
-$APK_PATH = isset($argv[1]) ? $argv[1]:false;
+define('APK_PATH', isset($argv[1]) ? $argv[1]:false);
 
-if (!$APK_PATH) {
+if (!APK_PATH) {
   echo "error: 請輸入 apk 路徑!";
   exit;
 }
@@ -9,7 +9,7 @@ if (!$APK_PATH) {
 $devices = explode("\n", shell_exec("adb devices"));
 $path = preg_replace("/([\w]*)InstallApkToDevices.php$/", '$1',$argv[0]);
 $zip = new ZipArchive;
-if ($zip->open($APK_PATH) === TRUE) {
+if ($zip->open(APK_PATH) === TRUE) {
   $zip->extractTo("$path", 'AndroidManifest.xml');
   $zip->close();
 } else {
@@ -37,7 +37,7 @@ for ($i = 1; $i < count($devices); $i++) {
     $deviceNum = preg_replace($pattern, "$1", $devices[$i]);
     echo "----------" . $deviceNum . "----------\n";
     // 安裝 apk 到指定手機
-    echo shell_exec("adb -s $deviceNum install -r $APK_PATH");
+    echo shell_exec("adb -s $deviceNum install -r APK_PATH");
     // 在特定手機上執行特定程式
     $adbStartAppShell = "adb -s $deviceNum shell am start -a android.intent.action.MAIN -n $package/$className";
     echo shell_exec("$adbStartAppShell");
