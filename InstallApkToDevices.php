@@ -37,7 +37,7 @@ for ($i = 1; $i < count($devices); $i++) {
     $deviceNum = preg_replace($pattern, "$1", $devices[$i]);
     echo "----------" . $deviceNum . "----------\n";
     // 安裝 apk 到指定手機
-    echo shell_exec("adb -s $deviceNum install -r APK_PATH");
+    echo shell_exec("adb -s $deviceNum install -r " . APK_PATH);
     // 在特定手機上執行特定程式
     $adbStartAppShell = "adb -s $deviceNum shell am start -a android.intent.action.MAIN -n $package/$className";
     echo shell_exec("$adbStartAppShell");
