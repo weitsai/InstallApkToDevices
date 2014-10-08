@@ -57,6 +57,10 @@ InstallApkToDevices 是解決一次要安裝某個 apk 到所有裝置上的問�
 4. `adb -s [裝置編號] install [apk路徑]` 安裝 apk
 5. `adb -s [裝置編號] shell am start -a android.intent.action.MAIN -n [Package Name]/[Acitivity Name]`
 
+執行結果
+========
+![執行結果](http://api.drp.io/files/5435222b890c6.png)
+
 
 
 
