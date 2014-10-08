@@ -23,7 +23,7 @@ InstallApkToDevices 是解決一次要安裝某個 apk 到所有裝置上的問�
   * 參考範例
   `php InstallApkToDevices.php ~/IHelpActivity.apk`
 
-1. 安裝特定資聊夾下所有 Apk
+1. 安裝特定資料夾下所有 Apk
   `php InstallAllApkToDevices.php [DIR Path]`
 
   * 參考範例
