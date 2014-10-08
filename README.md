@@ -26,7 +26,7 @@ InstallApkToDevices 是解決一次要安裝某個 apk 到所有裝置上的問�
 1. 安裝特定資聊夾下所有 Apk
   `php InstallAllApkToDevices.php [DIR Path]`
 
-  * 使用範例
+  * 參考範例
   `php InstallAllApkToDevices.php apks`
 
     > 是否一次安裝全部呢？[y/N]
