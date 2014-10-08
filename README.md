@@ -17,11 +17,36 @@ InstallApkToDevices 是解決一次要安裝某個 apk 到所有裝置上的問�
 
 使用方式
 ========
-`php InstallApkToDevices.php [APK路徑]`
+1. 單一安裝
+  `php InstallApkToDevices.php [APK Path]`
 
-參考範例
-`php InstallApkToDevices.php ~/IHelpActivity.apk`
+  * 參考範例
+  `php InstallApkToDevices.php ~/IHelpActivity.apk`
 
+1. 安裝特定資聊夾下所有 Apk
+  `php InstallAllApkToDevices.php [DIR Path]`
+
+  * 使用範例
+  `php InstallAllApkToDevices.php apks`
+
+    > 是否一次安裝全部呢？[y/N]
+    N
+
+    > 是否要安裝 apks/IHelp-2.1.0.apk 呢？[Y/n/q]
+    Y
+
+    9461 KB/s (138222 bytes in 0.014s)
+
+    ----------192.168.56.101:5555----------
+
+      pkg: /data/local/tmp/IHelp-2.1.0.apk
+
+    Success
+
+    Starting: Intent { act=android.intent.action.MAIN cmp=edu.stu.ihelp.client/.IHelpActivity }
+
+    > 是否要安裝 apks/RubyConf2014.apk 呢？[Y/n/q]
+    N
 
 
 程式運作原理
