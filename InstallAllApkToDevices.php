@@ -36,5 +36,6 @@ foreach($apks as $apk) {
     }
   }
 
-  echo shell_exec("php {$path}/InstallApkToDevices.php $apk");
+  echo "Installing {$apk}" . "\n";
+  echo shell_exec("php {$path}/InstallApkToDevices.php {$apk}") . "\n";
 }
