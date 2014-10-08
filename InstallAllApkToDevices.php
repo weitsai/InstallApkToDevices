@@ -13,6 +13,9 @@ if (count($apks) <= 0) {
 }
 
 $path = preg_replace("/([\w]*)InstallAllApkToDevices.php$/", '$1',$argv[0]);
+if ($path == '') {
+  $path = trim(shell_exec('pwd'));
+}
 
 $isAutoInstall = false;
 echo '是否一次安裝全部呢？[y/N]';

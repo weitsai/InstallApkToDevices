@@ -8,6 +8,10 @@ if (!APK_PATH) {
 
 $devices = explode("\n", shell_exec("adb devices"));
 $path = preg_replace("/([\w]*)InstallApkToDevices.php$/", '$1',$argv[0]);
+if ($path == '') {
+  $path = trim(shell_exec("pwd"));
+}
+
 $zip = new ZipArchive;
 if ($zip->open(APK_PATH) === TRUE) {
   $zip->extractTo("$path", 'AndroidManifest.xml');
